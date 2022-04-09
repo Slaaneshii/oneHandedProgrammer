@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.tbxEntendu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,6 +36,11 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.pbSlaanesh = new System.Windows.Forms.PictureBox();
+            this.tbrTransparency = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlaanesh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbrTransparency)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxEntendu
@@ -47,6 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
@@ -56,6 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
@@ -99,11 +107,46 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // pbSlaanesh
+            // 
+            this.pbSlaanesh.Image = global::oneHandedProgrammer.Properties.Resources.slaaneshPP;
+            this.pbSlaanesh.Location = new System.Drawing.Point(-14, 241);
+            this.pbSlaanesh.Name = "pbSlaanesh";
+            this.pbSlaanesh.Size = new System.Drawing.Size(324, 303);
+            this.pbSlaanesh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSlaanesh.TabIndex = 7;
+            this.pbSlaanesh.TabStop = false;
+            // 
+            // tbrTransparency
+            // 
+            this.tbrTransparency.Location = new System.Drawing.Point(100, 206);
+            this.tbrTransparency.Maximum = 100;
+            this.tbrTransparency.Minimum = 10;
+            this.tbrTransparency.Name = "tbrTransparency";
+            this.tbrTransparency.Size = new System.Drawing.Size(191, 45);
+            this.tbrTransparency.TabIndex = 8;
+            this.tbrTransparency.TickFrequency = 5;
+            this.tbrTransparency.Value = 100;
+            this.tbrTransparency.Scroll += new System.EventHandler(this.tbrTransparency_Scroll);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(108, 190);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Transparency";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 437);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(291, 540);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pbSlaanesh);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
@@ -111,9 +154,17 @@
             this.Controls.Add(this.tbxConverti);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxEntendu);
+            this.Controls.Add(this.tbrTransparency);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmMain";
+            this.ShowIcon = false;
             this.Text = "One handed Programmer";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlaanesh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbrTransparency)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +179,9 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.PictureBox pbSlaanesh;
+        private System.Windows.Forms.TrackBar tbrTransparency;
+        private System.Windows.Forms.Label label3;
     }
 }
 

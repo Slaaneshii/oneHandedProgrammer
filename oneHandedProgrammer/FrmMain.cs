@@ -75,5 +75,10 @@ namespace oneHandedProgrammer
             vh.comparisonManager = sttM;
             s.Close();
         }
+
+        private void tbrTransparency_Scroll(object sender, EventArgs e)
+        {
+            this.Opacity = tbrTransparency.Value / 100.0;
+        }
     }
 }
