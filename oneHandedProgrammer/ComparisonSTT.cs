@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace oneHandedProgrammer
 {
-    internal class ComparisonSTT
+    [Serializable]
+    public class ComparisonSTT
     {
         private string _entendu;
         private string _converti;

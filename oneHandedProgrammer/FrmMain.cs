@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace oneHandedProgrammer
 {
@@ -21,10 +25,6 @@ namespace oneHandedProgrammer
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            sttM.addASTTComparison("retour", "{ENTER}");
-            sttM.addASTTComparison("au tour", "{ENTER}");
-            sttM.addASTTComparison("autour", "{ENTER}");
-
             vh = new VoiceHelper(sttM);
             vh.callback = displayInfo;
         }
@@ -35,10 +35,45 @@ namespace oneHandedProgrammer
             tbxEntendu.Text = STT.Entendu;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) 
         {
             sttM.addASTTComparison(tbxEntendu.Text, tbxConverti.Text);
             vh.comparisonManager = sttM;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            serialize();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = Environment.CurrentDirectory;
+            ofd.Filter = "slaanesh files (*.slaanesh)|*.slaanesh";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string path = ofd.FileName;
+                deserialize(path);
+            }
+        }
+
+        private void serialize()
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"./savedVoice.slaanesh";
+            Stream s = File.Open(path,FileMode.Create);
+            BinaryFormatter b = new BinaryFormatter();
+            b.Serialize(s, sttM);
+            s.Close();
+        }
+
+        private void deserialize(string path)
+        {
+            Stream s = File.Open(path, FileMode.Open);
+            BinaryFormatter b = new BinaryFormatter();
+            sttM = (STTComparisonManager)b.Deserialize(s);
+            vh.comparisonManager = sttM;
+            s.Close();
         }
     }
 }

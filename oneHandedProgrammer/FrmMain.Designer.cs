@@ -33,13 +33,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxConverti = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbxEntendu
             // 
             this.tbxEntendu.Location = new System.Drawing.Point(12, 28);
             this.tbxEntendu.Name = "tbxEntendu";
-            this.tbxEntendu.Size = new System.Drawing.Size(112, 20);
+            this.tbxEntendu.Size = new System.Drawing.Size(246, 20);
             this.tbxEntendu.TabIndex = 0;
             // 
             // label1
@@ -64,12 +66,12 @@
             // 
             this.tbxConverti.Location = new System.Drawing.Point(12, 96);
             this.tbxConverti.Name = "tbxConverti";
-            this.tbxConverti.Size = new System.Drawing.Size(112, 20);
+            this.tbxConverti.Size = new System.Drawing.Size(246, 20);
             this.tbxConverti.TabIndex = 2;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(82, 138);
+            this.btnAdd.Location = new System.Drawing.Point(12, 137);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(42, 43);
             this.btnAdd.TabIndex = 4;
@@ -77,11 +79,33 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(60, 192);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(42, 43);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(12, 192);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(42, 43);
+            this.btnLoad.TabIndex = 6;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 437);
+            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbxConverti);
@@ -102,6 +126,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxConverti;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
 

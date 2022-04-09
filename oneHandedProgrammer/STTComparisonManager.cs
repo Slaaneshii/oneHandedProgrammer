@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace oneHandedProgrammer
 {
-    internal class STTComparisonManager
+    [Serializable]
+    public class STTComparisonManager
     {
         public List<ComparisonSTT> _listManager;
 
