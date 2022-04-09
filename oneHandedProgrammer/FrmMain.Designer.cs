@@ -160,7 +160,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.ShowIcon = false;
-            this.Text = "One handed Programmer";
+            this.Text = "One Handed Programmer";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlaanesh)).EndInit();
