@@ -76,7 +76,8 @@ namespace oneHandedProgrammer
             //sttM = (STTComparisonManager)b.Deserialize(s);
             //vh.comparisonManager = sttM;
             //s.Close();
-            SlaXmlSerializer.deserializeXML<STTComparisonManager>(path);
+            STTComparisonManager sttT = SlaXmlSerializer.deserializeXML<STTComparisonManager>(path);
+            sttM._listManager = sttT._listManager;
         }
 
         private void tbrTransparency_Scroll(object sender, EventArgs e)
