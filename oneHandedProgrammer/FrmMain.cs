@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace oneHandedProgrammer
 {
@@ -61,19 +62,21 @@ namespace oneHandedProgrammer
         private void serialize()
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + @"./savedVoice.slaanesh";
-            Stream s = File.Open(path,FileMode.Create);
-            BinaryFormatter b = new BinaryFormatter();
-            b.Serialize(s, sttM);
-            s.Close();
+            //Stream s = File.Open(path,FileMode.Create);
+            //BinaryFormatter b = new BinaryFormatter();
+            //b.Serialize(s, sttM);
+            //s.Close();
+            SlaXmlSerializer.serializeXML(sttM, path);
         }
 
         private void deserialize(string path)
         {
-            Stream s = File.Open(path, FileMode.Open);
-            BinaryFormatter b = new BinaryFormatter();
-            sttM = (STTComparisonManager)b.Deserialize(s);
-            vh.comparisonManager = sttM;
-            s.Close();
+            //Stream s = File.Open(path, FileMode.Open);
+            //BinaryFormatter b = new BinaryFormatter();
+            //sttM = (STTComparisonManager)b.Deserialize(s);
+            //vh.comparisonManager = sttM;
+            //s.Close();
+            SlaXmlSerializer.deserializeXML<STTComparisonManager>(path);
         }
 
         private void tbrTransparency_Scroll(object sender, EventArgs e)

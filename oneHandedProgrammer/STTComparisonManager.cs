@@ -20,7 +20,6 @@ namespace oneHandedProgrammer
         {
             _listManager.Add(new ComparisonSTT(entendu, converti));
         }
-
         public ComparisonSTT convertSTT(string entendu)
         {
             foreach(ComparisonSTT compared in _listManager)

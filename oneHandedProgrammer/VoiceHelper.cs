@@ -23,6 +23,8 @@ namespace oneHandedProgrammer
             engine.RecognizeAsync(RecognizeMode.Multiple);
             comparisonManager = stt;
         }
+        
+        //https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?view=windowsdesktop-6.0
         private void Engine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             ComparisonSTT compared;

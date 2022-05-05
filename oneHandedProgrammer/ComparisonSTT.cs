@@ -18,6 +18,10 @@ namespace oneHandedProgrammer
             Converti = converti;
         }
 
+        public ComparisonSTT()
+        {
+        }
+
         public string Entendu { get => _entendu; set => _entendu = value.ToLower(); }
         public string Converti { get => _converti; set => _converti = value.ToLower(); }
 
